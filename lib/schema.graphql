@@ -1,0 +1,20 @@
+type User
+  @auth(
+    rules: [
+      { allow: public, provider: apiKey },
+    ]
+  )
+  @model {
+    id: ID!
+    user: String! @index(name: "getUserByUser")
+    name: String
+    mobile_phone: String
+    home_phone: String
+    email: String
+    createdAt: AWSDateTime!
+    updatedAt: AWSDateTime!
+    street: String
+    city: String
+    state: String
+    zip: String
+}
