@@ -18,3 +18,12 @@ type User
     state: String
     zip: String
 }
+
+type Location {
+  id: Int
+  name: String
+}
+
+type Query {
+  listLocations(lat: Float!, lon: Float!, radius: Int!): [Location] @function(name: "LambdaData")
+}
